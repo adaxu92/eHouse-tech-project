@@ -1,0 +1,22 @@
+<picture class="hero-image__image object-fit--image">
+  <source media="(min-width: 1440px)" srcset="{{- section.settings.hero_dsktp_image | img_url: '2000x' -}}">
+  <source media="(min-width: 1024px)" srcset="{{- section.settings.hero_dsktp_image | img_url: '1440x' -}}">
+  <source media="(min-width: 768px)" srcset="{{- section.settings.hero_dsktp_image| img_url: '992x' -}}"> 
+  {%- if section.settings.hero_mbl_image -%}
+    <source media="(max-width: 767px)" srcset="{{- section.settings.hero_mbl_image | img_url: '992x' -}}">
+  {%- endif -%}
+  <img src="{{- section.settings.hero_dsktp_image | img_url: '375x' -}}" alt="{{ section.settings.hero_dsktp_image.alt }}">
+</picture>
+
+<div class="hero-image__content">
+  <article class="hero-image__content__text">
+    <span class="span--block">{{ section.settings.title }}</span>
+    <h1>{{ section.settings.hero_sub_title }}</h1>
+  </article>
+
+  <div class="hero-image__content__cta">
+    {%- for link in linklists[section.settings.hero_text_ctas].links -%}
+      <a class="btn--contained" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+    {%- endfor -%}
+  </div>
+</div>

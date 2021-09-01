@@ -1,0 +1,23 @@
+<div class="image-block__container">
+  <picture class="image-block__image object-fit--image">
+    <img src="{{- block.settings.img_blk_image | img_url: '750x' -}}" alt="{{ block.settings.img_blk_image.alt }}">
+  </picture>
+  
+  <div class="image-block__content text-align--center">
+    <article class="image-block__content__text">
+      <h4>{{ block.settings.title }}</h4>
+      {{ block.settings.img_blk_desc }}
+    </article>
+  
+    <div class="image-block__content__cta">
+      {%- if block.settings.img_blk_ctas != blank -%}
+        {%- for link in linklists[block.settings.img_blk_ctas].links -%}
+          <a class="btn--uncontained" href="{{ link.url }}"><span>{{ link.title }}</span></a>
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if block.settings.img_blk_coll != blank -%}
+        <a class="btn--uncontained" href="{{ block.settings.img_blk_url }}"><span>{{ block.settings.img_blk_coll }}</span></a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>

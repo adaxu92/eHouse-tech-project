@@ -1,0 +1,18 @@
+<picture class="text-image__image object-fit--image">
+  <img src="{{- section.settings.text_image | img_url: '1000x' -}}" alt="{{ section.settings.text_image.alt }}">
+</picture>
+
+<div class="text-image__content__wrapper">
+  <div class="text-image__content">
+    <article class="text-image__content__text">
+      <h3>{{ section.settings.title }}</h3>
+      {{ section.settings.text_image_desc }}
+    </article>
+  
+    <div class="text-image__content__cta">
+      {%- if section.settings.text_image_cta -%}
+      <a class="btn--contained" href="{{ section.settings.text_image_url }}"><span>{{ section.settings.text_image_cta }}</span></a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
