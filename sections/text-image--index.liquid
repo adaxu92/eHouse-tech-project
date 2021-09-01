@@ -1,0 +1,48 @@
+{% schema %}
+{
+  "name": "Text Image",
+  "tag": "section",
+  "class": "text-image__block",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Super Title"
+    },
+    {
+      "id": "text_image_desc",
+      "type": "richtext",
+      "label": "Description"
+    },
+    {
+      "id": "text_image",
+      "type": "image_picker",
+      "label": "Image"
+    },
+    {
+      "id": "text_image_flip",
+      "type": "checkbox",
+      "label": "Flip Image & Text Box",
+      "default": false
+    },
+    {
+      "id": "text_image_cta",
+      "type": "text",
+      "label": "CTA Text"
+    },
+    {
+      "id": "text_image_url",
+      "type": "url",
+      "label": "CTA Link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home Page",
+      "name": "Text Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'text-image', section: section %}

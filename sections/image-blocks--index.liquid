@@ -1,0 +1,61 @@
+{% schema %}
+{
+  "name": "Image Blocks",
+  "tag": "section",
+  "class": "image-blocks__block",
+  "max_blocks": 2,
+  "blocks": [
+    {
+      "type": "image_block",
+      "name":  "Text Image",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "img_blk_desc",
+          "type": "richtext",
+          "label": "Description"
+        },
+        {
+          "id": "img_blk_image",
+          "type": "image_picker",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "CTA - Menu or Input"
+        },
+        {
+          "id": "img_blk_ctas",
+          "type": "link_list",
+          "label": "Select a Menu",
+          "info": "Adding a menu will override CTA text & link"
+        },
+        {
+          "id": "img_blk_coll",
+          "type": "text",
+          "label": "CTA Text"
+        },
+        {
+          "id": "img_blk_url",
+          "type": "url",
+          "label": "CTA Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home Page",
+      "name": "Image Blocks"
+    }
+  ]
+}
+{% endschema %}
+
+{%- for block in section.blocks -%}
+{% render 'image-blocks', block: block %}
+{%- endfor -%}

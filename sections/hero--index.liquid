@@ -1,0 +1,43 @@
+{% schema %}
+{
+  "name": "Hero Image",
+  "tag": "section",
+  "class": "hero-image__block",
+  "settings": [
+    {
+      "id": "hero_dsktp_image",
+      "type": "image_picker",
+      "label": "Desktop Image"
+    },
+    {
+      "id": "hero_mbl_image",
+      "type": "image_picker",
+      "label": "Mobile Image",
+      "info": "Optional"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Super Title"
+    },
+    {
+      "id": "hero_sub_title",
+      "type": "textarea",
+      "label": "Title"
+    },
+    {
+      "id": "hero_text_ctas",
+      "type": "link_list",
+      "label": "Select a Menu"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home Page",
+      "name": "Hero Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'hero-index', section: section %}
