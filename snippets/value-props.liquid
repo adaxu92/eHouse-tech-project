@@ -1,0 +1,11 @@
+<section class="value-props__container">
+  {%- for i in (1..3) -%}
+    {%- assign props = i | prepend: 'prop-' | append: '-title' -%}
+    {%- assign icons = i | prepend: 'prop-' | append: '-icon' -%}
+
+    <div class="value-props__content">
+      <img src="{{- settings[icons] | img_url: '100x' -}}" alt="{{ settings[icons].alt }}">
+      <span class="value-props__text">{{ settings[props] }}</span>
+    </div>
+  {%- endfor -%}
+</section>

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Themekit template theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://github.com/Shopify/themekit",
+    "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name": "Value Props",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Value Prop 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "prop-1-icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "prop-1-title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Value Prop 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "prop-2-icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "prop-2-title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+          "content": "Value Prop 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "prop-3-icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "prop-3-title",
+        "label": "Title"
+      }
+    ]
+  }
+]
