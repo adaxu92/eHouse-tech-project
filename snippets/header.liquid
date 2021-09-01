@@ -1,0 +1,46 @@
+<header>
+  <div class="nav-mobile">
+    {% render 'menu-icon' %}
+    <img class="nav-mobile__logo" src="{{ 'fakestore-logo.png' | asset_img_url: '200x' }}" alt="Mobile Logo">
+    <img class="nav-mobile__cart" src="{{ 'cart-icon.png' | asset_img_url: '200x' }}" alt="Mobile Cart Icon">
+  </div>
+
+  <div class="nav-desktop">
+    <img class="nav-desktop__logo" src="{{ 'fakestore-logo.png' | asset_img_url: '300x' }}" alt="Desktop Logo">
+
+    <div class="nav-desktop__menu">
+      {% for link in linklists['header-menu-1'].links %}
+        {% assign child_list_handle = link.title | handleize %}
+        {% if linklists[child_list_handle].links != blank %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          [{% for childlink in linklists[child_list_handle].links %}
+            <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+          {% endfor %}]
+        {% else %}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
+      <a href="/">Sale</a>
+    </div>
+
+    <div class="nav-desktop__right">
+      <form action="{{ routes.search_url }}" class="nav-desktop__search">
+        <input type="text"placeholder="Search"name="q" value="{{ search.terms | escape }}">
+        <button type="submit" value="search">{% render 'search-icon' %}</button>
+      </form>
+      
+      <div class="nav-desktop__account">
+        {% if customer %}
+        <a href="/account">My Account</a>
+        {{ 'log out'  | customer_logout_link }}
+      {% else %}
+        <a class="my-account" href="/account">My Account</a>
+        {{ 'Sign In or Sign Up' | customer_register_link }}
+      {% endif %}
+      </div>
+
+      <div class="divider">&nbsp;</div>
+      <div class="nav-desktop__cart"><img src="{{ 'cart-icon.png' | asset_img_url: '200x' }}" alt="Desktop Cart Icon" /><span>3</span></div>
+    </div>
+  </div>
+</header>
